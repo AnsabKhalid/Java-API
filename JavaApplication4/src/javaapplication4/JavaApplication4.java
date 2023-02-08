@@ -42,15 +42,14 @@ public class JavaApplication4 {
         String base64 = Base64.getEncoder().encodeToString(bytes);
         //System.out.println(base64);
         patientFile patFile = new patientFile();
-        patFile.setPatId("001000063139");
-        patFile.setOrderId("10");
-        patFile.setCrtdBy("001");
+        patFile.setPatId("");
+        patFile.setOrderId("");
+        patFile.setCrtdBy("");
         patFile.setFileType("jpg");
         patFile.setFileName("panda4.jpg");
         patFile.setFileBase64(base64);
         
-       // String query_url = "http://221.120.219.214:7000/patientInformation";
-         // String json = "{\"patientId\" : \"1792147\", \"contactNumber\" : \"03003512602\"}";
+
           String query_url = "http://IP:PORT/NAME";
         String json = "{ \"patientId\" : \"" + patFile.getPatId()
                  + "\", \"orderId\" : \"" + patFile.getOrderId()
@@ -84,20 +83,10 @@ public class JavaApplication4 {
            OutputStream os = conn.getOutputStream();
            os.write(json.getBytes("UTF-8"));
            os.close(); 
-//           // read the response
-//           InputStream in = new BufferedInputStream(conn.getInputStream());
-//           String result = IOUtils.toString(in, "UTF-8");
-           //System.out.println(result);
+
            int status = conn.getResponseCode();
            System.out.println(status);
-           //System.out.println("result after Reading JSON Response");
-//           JSONObject resp = new JSONObject(result);
-//           JSONArray res = resp.getJSONArray("res");
-//           JSONObject resLine = res.getJSONObject(1);
-//           System.out.println(resLine.getString("cptDescription"));
-//           String patName = myResponse.getString("patientName");
-//           System.out.println(patName);
-//           in.close();
+
            conn.disconnect();
            } catch (Exception e) {
    			System.out.println(e);
