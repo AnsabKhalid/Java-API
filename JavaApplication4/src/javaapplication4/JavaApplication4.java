@@ -51,7 +51,7 @@ public class JavaApplication4 {
         
        // String query_url = "http://221.120.219.214:7000/patientInformation";
          // String json = "{\"patientId\" : \"1792147\", \"contactNumber\" : \"03003512602\"}";
-          String query_url = "http://192.168.18.47:7000/patientSampleFile";
+          String query_url = "http://IP:PORT/NAME";
         String json = "{ \"patientId\" : \"" + patFile.getPatId()
                  + "\", \"orderId\" : \"" + patFile.getOrderId()
                 + "\", \"crtdBy\" : \"" + patFile.getCrtdBy()
