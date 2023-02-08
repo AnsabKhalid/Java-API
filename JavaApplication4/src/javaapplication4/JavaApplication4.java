@@ -60,18 +60,7 @@ public class JavaApplication4 {
                 + "\", \"fileBytes\" : \"" + patFile.getFileBase64() + "\" }";
                 
         
-        /*
-        {
-        "patientId": "001000063139",
-        "orderId": "10",
-        "crtdBy": "001",
-        "locationId": "001",
-        "fileType": "PDF",
-        "fileName": "test.pdf",
-        "fileBytes": ""
-
-}
-        */
+       
           try {
            URL url = new URL(query_url);
            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
